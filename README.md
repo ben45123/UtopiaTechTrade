@@ -1,2 +1,3 @@
 # UtopiaTechTrade
 Bartering system that allows users to exchange their items and/or services with one another created on Java Eclipse IDE.
+This code is a system that stores objects of users, items, services, and offers. A user can run the code, create an account, add an item or service to their list of items and services, list their items or services so others can create an offer on them, create their own offers for the items and/or services of other users, accept or reject an offer, and can rate the exchange if an offer was accepted. In addition to the Java code, I created a class diagram to show how the classes interact with each other, and a sequence diagram to show an example of the order of events that occur.
