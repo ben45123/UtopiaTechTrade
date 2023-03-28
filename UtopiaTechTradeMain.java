@@ -78,7 +78,7 @@ public class UtopiaTechTradeMain {
 		System.out.println("Enter 1 to create an account: ");
 		System.out.println("Enter 2 to access a list of all users info: ");
 		System.out.println("Enter 3 to access the list of all items and/or services in the system: ");
-		System.out.println("Enter 4 to access a list of listed items and/or services of a specific user: ");
+		System.out.println("Enter 4 to access a list of all listed items and/or services of a specific user: ");
 		System.out.println("Enter 5 to create an Offer: ");
 		System.out.println("Enter 6 to view all incoming Offers: ");
 		System.out.println("Enter 7 to view all outgoing Offers: ");
@@ -130,15 +130,15 @@ public class UtopiaTechTradeMain {
 			else if(inputEntry==3) {
 				int notDeletedSize=0;
 				for(int i=0; i<UtopiaTechTrade.listOfAllIOrS.size(); i++) {
-					if(UtopiaTechTrade.listOfAllIOrS.get(i).getDeletedStatus()==false) {
+					if(UtopiaTechTrade.listOfAllIOrS.get(i).getDeletedStatus()==false && UtopiaTechTrade.listOfAllIOrS.get(i).getListStatus()==true) {
 						notDeletedSize=notDeletedSize+1;
 					}
 				}
 				
-				System.out.println("There are " + notDeletedSize + " total items/services in the system.");
+				System.out.println("There are " + notDeletedSize + " total items/services listed in the system.");
 				
 				for(int i=0; i<UtopiaTechTrade.listOfAllIOrS.size(); i++) {
-					if(UtopiaTechTrade.listOfAllIOrS.get(i).getDeletedStatus()==false) {
+					if(UtopiaTechTrade.listOfAllIOrS.get(i).getDeletedStatus()==false && UtopiaTechTrade.listOfAllIOrS.get(i).getListStatus()==true) {
 						UtopiaTechTrade.listOfAllIOrS.get(i).displayIOrS();
 					}
 				}
@@ -429,7 +429,7 @@ public class UtopiaTechTradeMain {
 						String password = userInput.next();
 						if(UtopiaTechTrade.users.get(i).getPassword().equals(password)) {
 							hasCorrectPassword=true;							
-							System.out.println("Enter the ID of the item or service you are looking for: ");
+							System.out.println("Enter the ID of the item or service you want to list: ");
 							inputEntry = userInput.nextInt();
 							
 							boolean found = false;
